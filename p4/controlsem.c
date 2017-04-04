@@ -2,8 +2,6 @@
 #include "serial_device.h"
 #include "semaphore.h"
 
-#include <stdio.h>//treudel despres d fer les proves
-
 #include <stdint.h>
 #include <util/delay.h>
 #include <avr/io.h>
@@ -33,56 +31,71 @@ void tick_monitor(void){
     switch (ordre){
     case 'E':
       if (estatS!=SemaphoreOff){
-	  semaphore_set(SemaphoreClear);
-	  estatS=SemaphoreClear;
-	  tick=CLEAR;
-	  serial_put('E');
-	  serial_put('M');
-	  serial_put('E');
-	  serial_put('R');
-	  serial_put('G');
-	  serial_put('E');
-	  serial_put('N');
-	  serial_put('C');
-	  serial_put('Y');
-	  serial_put('\r');
-	  serial_put('\n');
-	}
+	semaphore_set(SemaphoreClear);
+	estatS=SemaphoreClear;
+	tick=CLEAR;
+	serial_put('E');
+	serial_put('M');
+	serial_put('E');
+	serial_put('R');
+	serial_put('G');
+	serial_put('E');
+	serial_put('N');
+	serial_put('C');
+	serial_put('Y');
+	serial_put('\r');
+	serial_put('\n');
+      }
+      else{
+	serial_put('E');
+      	serial_put('\r');
+      	serial_put('\n');
+      }
       break;
 
     case 'S':
       if (estatS!=SemaphoreOff){
-	  semaphore_set(SemaphoreOff);
-	  estatS=SemaphoreOff;
-	  tick=0;
-	  serial_put('S');
-	  serial_put('H');
-	  serial_put('U');
-	  serial_put('T');
-	  serial_put('D');
-	  serial_put('O');
-	  serial_put('W');
-	  serial_put('N');
-	  serial_put('\r');
-	  serial_put('\n');
-	}
+	semaphore_set(SemaphoreOff);
+	estatS=SemaphoreOff;
+	tick=0;
+	serial_put('S');
+	serial_put('H');
+	serial_put('U');
+	serial_put('T');
+	serial_put('D');
+	serial_put('O');
+	serial_put('W');
+	serial_put('N');
+	serial_put('\r');
+	serial_put('\n');
+      }
+      else{
+	serial_put('E');
+      	serial_put('\r');
+      	serial_put('\n');
+      }
       break;
       
     case 'R':
       if (estatS==SemaphoreOff){
-	  semaphore_set(SemaphoreClear);
-	  estatS=SemaphoreClear;
-	  tick=CLEAR;
-	  serial_put('R');
-	  serial_put('E');
-	  serial_put('S');
-	  serial_put('T');
-	  serial_put('A');
-	  serial_put('R');
-	  serial_put('T');
-	  serial_put('\r');
-	  serial_put('\n');
-	}
+	semaphore_set(SemaphoreClear);
+	estatS=SemaphoreClear;
+	tick=CLEAR;
+	serial_put('R');
+	serial_put('E');
+	serial_put('S');
+	serial_put('T');
+	serial_put('A');
+	serial_put('R');
+	serial_put('T');
+	serial_put('\r');
+	serial_put('\n');
+      }
+      else{
+	serial_put('E');
+      	serial_put('\r');
+      	serial_put('\n');
+      }
       break;
       
     case '\n':
@@ -90,7 +103,7 @@ void tick_monitor(void){
       break;
 
     default:
-      serial_put('U');
+      serial_put('E');
       serial_put('\r');
       serial_put('\n');
       
