@@ -1,0 +1,47 @@
+---------------------------
+
+PROVA GPIO_DEVICE
+
+avr-gcc -std=c99 -Os -mmcu=atmega328p -fshort-enums \-DF_CPU=16000000UL gpio_device.c prova_led.c -o prova_led
+
+avr-objcopy -Oihex prova_led prova_led.hex
+
+sudo avrdude -c arduino -p atmega328p -P /dev/ttyACM0 -U prova_led.hex
+
+---------------------------
+
+PROVA SEMAPHORE
+
+avr-gcc -std=c99 -Os -mmcu=atmega328p -fshort-enums \-DF_CPU=16000000UL gpio_device.c semaphore.c prova_semaphore.c -o prova_semaphore
+
+avr-objcopy -Oihex prova_semaphore prova_semaphore.hex
+
+sudo avrdude -c arduino -p atmega328p -P /dev/ttyACM0 -U prova_semaphore.hex
+
+----------------------------
+
+PROVA SERIALDEVICE
+
+avr-gcc -std=c99 -Os -mmcu=atmega328p -fshort-enums \-DF_CPU=16000000UL serial_device.c prova_serial.c -o prova_serial
+
+avr-objcopy -Oihex prova_serial prova_serial.hex
+
+sudo avrdude -c arduino -p atmega328p -P /dev/ttyACM0 -U prova_serial.hex
+
+picocom /dev/ttyACM0
+
+-----------------------------
+
+PROVA MAIN
+
+avr-gcc -std=c99 -Os -mmcu=atmega328p -fshort-enums \-DF_CPU=16000000UL gpio_device.c semaphore.c controlsem.c serial_device.c main.c  -o prova_main
+
+avr-objcopy -Oihex prova_main prova_main.hex
+
+sudo avrdude -c arduino -p atmega328p -P /dev/ttyACM0 -U prova_main.hex
+
+picocom /dev/ttyACM0
+
+------------------------------
+
+
