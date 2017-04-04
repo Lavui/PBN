@@ -1,4 +1,5 @@
 
+
 /*#include <stdbool.h>
   #include <stdin.h>*/
 
@@ -9,13 +10,21 @@
 
 
 void serial_init(void){
+
   UBRR0H = 0b00000000;
-  UBRR0L = 0b01100111;
+  UBRR0L = 0b01100111;  
 
-  UCSR0A = UCSR0A & ~_BV(U2X0);
+  UCSR0A &= ~_BV(U2X0);
 
-  UCSR0B = 0b00011000; /* Activem TX i RX */
-  UCSR0C = 0b00000110; /*8 dades*/
+  UCSR0B = _BV(RXEN0) | _BV(TXEN0);
+
+  UCSR0C = _BV(UCSZ01) | _BV(UCSZ00) &
+    ~_BV(UMSEL01) & ~_BV(UMSEL00) &
+    ~_BV(UPM01) & ~_BV(UPM00) &
+    ~ _BV(USBS0);
+
+
+
 }
 
 uint8_t serial_get(void){
