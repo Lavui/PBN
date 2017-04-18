@@ -44,16 +44,4 @@ picocom /dev/ttyACM0
 
 ------------------------------
 
-MAIN
-
-avr-gcc -std=c99 -Os -mmcu=atmega328p -fshort-enums \-DF_CPU=16000000UL gpio_device.c semaphore.c controlsem.c serial_device.c main.c  -o main
-
-avr-objcopy -Oihex main main.hex
-
-sudo avrdude -c arduino -p atmega328p -P /dev/ttyACM0 -U main.hex
-
-picocom /dev/ttyACM0
-
-------------------------------
-
 

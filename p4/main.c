@@ -8,8 +8,8 @@ int main(void){
   controlsem_init();
   while(1){
     _delay_ms(INTERVAL);
-    tick_monitor();
     tick_semaphore();
+    tick_monitor();
   }
   return 0;
 }

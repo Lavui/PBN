@@ -1,8 +1,7 @@
 #include "semaphore.h"
 #include "gpio_device.h"
 
-#include <stdio.h>
-#include <stdbool.h>
+#include <avr/io.h>
 
 semaphore_state_t estatS;
 pin_t lverd,ltaro,lverm;

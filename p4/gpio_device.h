@@ -1,11 +1,7 @@
 #ifndef GPIO_DEVICE_H
 #define GPIO_DEVICE_H
 
-#include <stdio.h>
-#include <avr/io.h>
-#include <util/delay.h>
 #include <stdbool.h>
-#include <stdlib.h>
 #include <stdint.h>
 
 
@@ -13,9 +9,9 @@
 typedef enum {Input, Output} pin_direction_t;
 
 typedef struct{
-	volatile uint8_t *port;
-	uint8_t pin;
-	}pin_t;
+  volatile uint8_t *port;
+  uint8_t pin;
+}pin_t;
 
 pin_t pin_bind(volatile uint8_t *port, uint8_t pin, pin_direction_t d);
 //Retorna un objecte pin_t associat al pin numero PIN del port PORT i inicialitza en mode D

@@ -16,7 +16,7 @@ def start():
 
 def stop():
 	ser.write('S')
-	print ser.readline()
+	print ser.readline()[:-1]
 	return''
 
 def emergency():
