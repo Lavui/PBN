@@ -1,4 +1,3 @@
-#include <avr/io.h>
 #include "gpio_device.h"
 
 
@@ -30,7 +29,7 @@ bool pin_r(pin_t p){
   }
 
 void pin_toggle(pin_t p){
-  if(bit_is_set(*DDR(p.port),p.pin))
+  if(bit_is_set(*p.port,p.pin))
     *(p.port) = ((*(p.port))&~_BV(p.pin));
   else
     *(p.port) = ((*(p.port))|_BV(p.pin));
@@ -38,8 +37,4 @@ void pin_toggle(pin_t p){
 
 void pin_unbind(pin_t *const p){
   (*p).port=NULL;
-}
-
-void main(){
-	0;
 }

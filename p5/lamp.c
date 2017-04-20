@@ -73,10 +73,10 @@ bool lamp_is_on(lamp_t l, color_t c){
     bit_is_set(l.green.port,l.green.pin);
     break;
   case Red:
-    pin_toggle(l.red.port,l.red.pin);
+    bit_is_set(l.red.port,l.red.pin);
     break;
   case Yellow:
-    pin_toggle(l.yellow.port,l.yellow.pin);
+    bit_is_set(l.yellow.port,l.yellow.pin);
     break;
   default:
     break; //Catch all condition, no es complira.

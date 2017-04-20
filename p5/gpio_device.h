@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <avr/io.h>
 
 #define NULL 0
 
@@ -23,7 +24,7 @@ void pin_w(pin_t p, bool v);
 bool pin_r(pin_t p);
 //llegeix un valor del pin p
 
-void pin_toogle(pin_t p);
+void pin_toggle(pin_t p);
 //conmuta el valor del pin p
 
 void pin_unbind(pin_t *const p);
