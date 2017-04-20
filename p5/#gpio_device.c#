@@ -1,7 +1,6 @@
-#include <avr/io.h>
 #include "gpio_device.h"
 
-
+#define NULL 0
 #define DDR(p) (p-1)
 
 pin_t pin_bind(volatile uint8_t *port, uint8_t pin, pin_direction_t d){
@@ -38,8 +37,4 @@ void pin_toggle(pin_t p){
 
 void pin_unbind(pin_t *const p){
   (*p).port=NULL;
-}
-
-void main(){
-	0;
 }

@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#define NULL 0
 
 
 typedef enum {Input, Output} pin_direction_t;

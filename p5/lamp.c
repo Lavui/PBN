@@ -1,10 +1,9 @@
 #include "lamp.h"
-#include "gpio_device.h"
 
 void lamp_init(
 	       lamp_t *const l,
 	       volatile uint8_t *prtg, uint8_t pg,
-	       volatile uint8_t *prty, uint8_t pg,
+	       volatile uint8_t *prty, uint8_t py,
 	       volatile uint8_t *prtr, uint8_t pr){
 
   l->green = pin_bind(prtg, pg, Output);
@@ -34,7 +33,7 @@ void lamp_on(lamp_t l, color_t c){
 
 
 
-void lamp_off(lamp_t l, color_t c);{
+void lamp_off(lamp_t l, color_t c){
   switch (c){
   case Green:
     pin_w(l.green,false);
@@ -51,7 +50,7 @@ void lamp_off(lamp_t l, color_t c);{
 }
 
 
-void lamp_toggle(lamp_t l, color_t c);{
+void lamp_toggle(lamp_t l, color_t c){
   switch (c){
   case Green:
     pin_toggle(l.green);
@@ -68,7 +67,7 @@ void lamp_toggle(lamp_t l, color_t c);{
 }
 
 
-bool lamp_is_on(lamp_t l, color_t c);{
+bool lamp_is_on(lamp_t l, color_t c){
   switch (c){
   case Green:
     bit_is_set(l.green.port,l.green.pin);
@@ -83,4 +82,5 @@ bool lamp_is_on(lamp_t l, color_t c);{
     break; //Catch all condition, no es complira.
   }
 }
+
 
