@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdint.h>
+
+
+int main(void){
+  uint16_t n;
+  printf("2 bytes en hex (4 simbols): \n");
+  scanf("%4hhx",&n);
+  
+  n=n&&"0111111111111110";
+  printf("Paraula: %c\n",&n);
+    
+  return 0;
+}

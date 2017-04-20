@@ -1,0 +1,22 @@
+#ifndef CUA_H
+#define CUA_H
+#include <stdbool.h>
+
+#define MAXCUA (7)
+
+typedef struct{
+  int first;
+  int last;
+  int valids;
+  char data[MAXCUA];
+}cua_t;
+
+bool cua_plena(const cua_t *const c);
+bool cua_buida(const cua_t *const c);
+int cua_get(cua_t *const c);
+void cua_put(cua_t *const c, char e);
+void cua_buidar(cua_t *const c);
+
+
+#endif
+
