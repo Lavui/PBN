@@ -1,6 +1,6 @@
 #include "blck_serial.h"
 #include "serial_device.h"
-#include <ctype.h>
+#include <ctype.h> /*Llibreria per isgraph*/
 
 void print(char s[]){
   uint8_t i=0;

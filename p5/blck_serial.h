@@ -1,3 +1,8 @@
+#ifndef BLCK_SERIAL_H
+#define BLCK_SERIAL_H
+
+#include <stdin.h>
+
 void print(char s[]);
 
 /*Envia per la UART bloc de caracters se li pasa com a parametre*/
@@ -7,4 +12,4 @@ int readline(char s[], uint8_t m);
 
 /* Va llegint caracters i els va guardant a la taula s fins que troba un caracter no grafic o be el nombre de caracters iguala m)*/
 
-
+#endif

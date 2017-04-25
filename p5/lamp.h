@@ -1,3 +1,6 @@
+#ifndef LAMP_H
+#define LAMP_H
+
 #include <stdbool.h>
 #include "gpio_device.h"
 #include <stdint.h>
@@ -15,3 +18,4 @@ bool lamp_is_on(lamp_t l, color_t c);
 
 
 
+#endif

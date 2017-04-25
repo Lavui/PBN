@@ -1,3 +1,6 @@
+#ifndef CONTROL_H
+#define CONTROL_H
+
 #include "semaph.h"
 
 typedef enum {StreetA,StreetB} street_t;
@@ -23,3 +26,6 @@ void control_on(void);
 semaph_stat_t control_get_stat(street_t s);
 
 //Retorna l'estat del semafor del carrer s
+
+
+#endif
