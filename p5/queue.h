@@ -1,5 +1,6 @@
 #include <stdbool.h>
-//#include <util/atomic.h>
+#include <stdint.h>
+#include <util/atomic.h>
 #define ELEMENTS 25
 
 typedef struct {
