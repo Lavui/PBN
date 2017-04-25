@@ -4,8 +4,8 @@ CC=avr-gcc
 CFLAGS=-std=c99 -Os -mmcu=atmega328p -fshort-enums \-DF_CPU=16000000UL
 OBJCOPY=avr-objcopy -Oihex
 AVRDUDE=sudo avrdude -c arduino -p atmega328p -P
-DEVICE=/dev/ttyACM0
-NOMARXIU = p5
+DEVICE=/dev/tty.usbmodem1411
+NOMARXIU = PR5_Galan_Moreno
 ARXIUSPROJECTE = blck_serial_prova.c blck_serial.c blck_serial.h control_prova.c control.c control.h crossing.c gpio_device.c gpio_device.h interpret.py lamp_prova.c lamp.c lamp.h main.py Makefile prova_queue/ queue.c queue.h semaph_prova.c semaph.c semaph.h serial_device_prova.c serial_device.c serial_device.h
 
 MAIN=semaph.o queue.o control.o lamp.o gpio_device.o crossing.o serial_device.o blck_serial.o
