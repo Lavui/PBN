@@ -1,5 +1,4 @@
 #include "queue.h"
-#include <util/atomic.h>
 
 
 void queue_empty(queue_t * const q){

@@ -1,5 +1,4 @@
 #include "semaph.h"
-#include <stdint.h>
 
 
 void semaph_init(semaph_t *const s,

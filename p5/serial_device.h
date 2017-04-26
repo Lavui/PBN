@@ -1,3 +1,6 @@
+#ifndef SERIAL_DEVICE_H
+#define SERIAL_DEVICE_H
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -22,3 +25,4 @@ bool serial_can_read(void);
 
 /* Retorna true sii hi ha un caràcter disponible per a ser llegit. Si aquesta funció retorna true es garanteix que una posterior crida a serial_get() no es bloquejarà. */
 
+#endif

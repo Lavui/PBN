@@ -1,4 +1,4 @@
-/*#include <avr/interrupt.h>*/
+
 #include <avr/io.h>
 #include "queue.h"
 #include "serial_device.h"

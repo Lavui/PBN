@@ -1,3 +1,6 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <util/atomic.h>
@@ -31,3 +34,4 @@ uint8_t queue_front(const queue_t *const q);
 /* Retorna l'element del davant de la cua q. Si la cua és buida retorna un valor arbitrari. */
 
 
+#endif

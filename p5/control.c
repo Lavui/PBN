@@ -4,7 +4,6 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "semaph.h"
 #include "control.h"
 
 

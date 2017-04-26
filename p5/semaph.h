@@ -11,7 +11,6 @@ typedef enum{
   SemApproach,
   SemStop,
 } semaph_state_t;
-//
 
 typedef struct{
   lamp_t l;

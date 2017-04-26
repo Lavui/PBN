@@ -1,7 +1,7 @@
 #include "control.h"
 #include "blck_serial.h"
 #include "serial_device.h"
-#include "string.h"
+#include <string.h>
 #include <avr/interrupt.h>
 #include <stdbool.h>
 
