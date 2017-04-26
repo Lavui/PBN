@@ -12,8 +12,7 @@ int main(){
   control_init();
   sei();
   control_off();
-
-  char s[5];
+  chars[5];
   print("START");
   while(1){
     readline(s,2);
@@ -66,7 +65,7 @@ int main(){
 
     else if(!strcmp(s,"FA")){
       control_force(StreetA);
-      if(control_get_state(StreetB)!=SemApproach && control_get_state(StreetB)!=SemOff){
+      if(control_get_state(StreetB)!=SemApproeach && control_get_state(StreetB)!=SemOff){
 	print("OK");
       }
       else
@@ -75,7 +74,7 @@ int main(){
 
     else if(!strcmp(s,"FB")){
       control_force(StreetB);
-      if(control_get_state(StreetA)!=SemApproach && control_get_state(StreetB)!=SemOff){
+      if(control_get_state(StreetA)!=SemApproeach && control_get_state(StreetB)!=SemOff){
 	print("OK");
       }
       else

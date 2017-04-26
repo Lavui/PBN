@@ -10,7 +10,7 @@
 
 static street_t carrer;
 static estat_general estatgen;
-static uint8_t tick;
+static uint8_t ticks;
 static semaph_t semafor1,semafor2;
 
 ISR(TIMER1_COMPA_vect){
@@ -24,7 +24,7 @@ ISR(TIMER1_COMPA_vect){
       break;
     case AtoB:
       semaphore_set(&semafor2,SemStop);
-      sempahore_set(&semafor1,SemApproach);
+      semaphore_set(&semafor1,SemApproach);
       estatgen=Bclear;
       ticks=APPROACH;
       break;
@@ -38,7 +38,7 @@ ISR(TIMER1_COMPA_vect){
       semaphore_set(&semafor2,SemApproach);
       semaphore_set(&semafor1,SemStop);
       estatgen=Aclear;
-      tick=APPROACH;
+      ticks=APPROACH;
       break;
     }
   else
@@ -85,7 +85,7 @@ void control_off(void){
   semaphore_set(&semafor2,SemOff);
 }
 
-semaph_stat_t control_get_state(street_t s){
+semaph_state_t control_get_state(street_t s){
   switch(s){
   case StreetA:
     return semaph_get(semafor1);
@@ -110,7 +110,7 @@ void control_force(street_t t){
       }
       break;
 
-    case StreetB_
+    case StreetB:
       if(semaph_get(semafor2)==SemApproach || semaph_get(semafor2) == SemClear){
 	estatgen=Bclear;
 	ticks=0;
@@ -122,4 +122,3 @@ void control_force(street_t t){
     break;
     }
 }
-z

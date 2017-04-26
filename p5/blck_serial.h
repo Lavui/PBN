@@ -1,7 +1,7 @@
 #ifndef BLCK_SERIAL_H
 #define BLCK_SERIAL_H
 
-#include <stdin.h>
+#include <stdint.h>
 
 void print(char s[]);
 
