@@ -1,6 +1,6 @@
 #include "gpio_device.h"
 
-#define NULL 0
+
 #define DDR(p) (p-1)
 
 pin_t pin_bind(volatile uint8_t *port, uint8_t pin, pin_direction_t d){
@@ -29,7 +29,7 @@ bool pin_r(pin_t p){
   }
 
 void pin_toggle(pin_t p){
-  if(bit_is_set(*DDR(p.port),p.pin))
+  if(bit_is_set(*p.port,p.pin))
     *(p.port) = ((*(p.port))&~_BV(p.pin));
   else
     *(p.port) = ((*(p.port))|_BV(p.pin));
