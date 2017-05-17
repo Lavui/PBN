@@ -1,0 +1,16 @@
+#include "timer.h"
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
+
+int main (void){
+  timer_init();
+  timer_handler_t thand_t;
+  DDRB =0xFF;
+  thand_t = timer_after(TIMER_MS(500),canvi_led());
+  while(1);
+  return 0;
+}
+void canvi_led(void){
+  PIND = _BV(PINB5);
+}

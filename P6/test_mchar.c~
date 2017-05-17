@@ -1,0 +1,34 @@
+#include "mchar.h"
+#include <stdio.h>
+
+
+void print_morse(mchar_t m) { 
+  mchar_iter_t i = mchar_iter(m); 
+  while (mchar_valid(i)) {
+    if (mchar_next(&i) == MDot){
+      printf(".");
+    }
+    else{
+      printf("-"); 
+    }
+  }
+}
+int main(void){
+  mchar_t c = mchar(1010);//C
+  print_morse(c);
+  mchar_t r = mchar(010); //R
+  print_morse(r);
+  mchar_t i = mchar(00);  //I
+  print_morse(i);
+  mchar_t s = mchar(000); //S
+  print_morse(s);
+  mchar_t t = mchar(1);   //T
+  print_morse(t); 
+  mchar_t y = mchar(00);  //I
+  print_morse(y);
+  mchar_t a = mchar(01);  //A
+  print_morse(a);
+  mchar_t n = mchar(10);  //N
+  print_morse(n);
+  return 0;
+}
